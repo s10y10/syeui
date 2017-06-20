@@ -1,0 +1,26 @@
+/**
+ * Created by yangsong on 16/1/24.
+ */
+
+class Proto {
+	private static dic:any = {
+		$1
+	}
+
+	$2
+
+	public static decode (buff:egret.ByteArray):any{
+		var msgId = buff.readUnsignedShort();
+		var clsStr = Proto.dic[msgId];
+		if(!clsStr){
+			console.warn('收到未知消息ID：' + msgId);
+			return null;
+		}
+
+		buff.position = 0;
+		var cls = egret.getDefinitionByName(clsStr);
+		var data = new cls();
+		data.decode(buff);
+		return data;
+	}
+}
