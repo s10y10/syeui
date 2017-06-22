@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="HomeSceneSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*">
+	<e:Image source="homebg_jpg" left="0" top="0"/>
+	<ns1:HomeMenu skinName="HomeMenuSkin" left="0" top="0"/>
+</e:Skin>

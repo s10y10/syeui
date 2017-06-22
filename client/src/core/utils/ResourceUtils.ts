@@ -161,11 +161,11 @@ class ResourceUtils extends BaseClass {
      * @param $onResourceLoadProgress 资源加载进度监听函数
      * @param $onResourceLoadTarget 资源加载监听函数所属对象
      */
-    public loadResource($resources = [], $groups = [], $onResourceLoadComplete:Function = null, $onResourceLoadProgress:Function = null, $onResourceLoadTarget:any = null):void {
+    public loadResource($resources = [], $groups = [], $onResourceLoadComplete:Function = null, $onResourceLoadProgress:Function = null, $onResourceLoadTarget:any = null,priority =0):void {
         var needLoadArr = $resources.concat($groups);
         var groupName = "loadGroup" + this._groupIndex++;
         RES.createGroup(groupName, needLoadArr, true);
         this._groups[groupName] = [$onResourceLoadComplete, $onResourceLoadProgress, $onResourceLoadTarget];
-        RES.loadGroup(groupName);
+        RES.loadGroup(groupName,priority);
     }
 }

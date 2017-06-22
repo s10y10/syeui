@@ -179,3 +179,23 @@ class ProxyUpdate {
     }
 
 }
+
+class cacheFunc {
+    public static fields = {
+        add: "@a",
+        delete: "@d"
+    };
+    public static getDeleteName(key) {
+        var arr = key.split('_');
+        return arr[1];
+    }
+    public static getDeleteValue(key, value) {
+        var arr = key.split('_');
+        if (arr.length == 3) {
+            return arr[2].replace('@', '');
+        }
+        else {
+            return value;
+        }
+    }
+}

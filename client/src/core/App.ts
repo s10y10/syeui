@@ -3,11 +3,6 @@
  */
 class App {
     /**
-     * 请求服务器使用的用户标识
-     * @type {string}
-     */
-    public static ProxyUserFlag:string = "";
-    /**
      * 全局配置数据
      * @type {null}
      */
@@ -23,6 +18,8 @@ class App {
      */
     public static ProtoConfig:any = null;
 
+    public static hashKey: string;
+
     /**
      * Http请求
      * @type {Http}
@@ -37,30 +34,6 @@ class App {
      */
     public static get Socket():Socket {
         return Socket.getInstance();
-    }
-
-    /**
-     * 模块管理类
-     * @type {ControllerManager}
-     */
-    public static get ControllerManager():ControllerManager {
-        return ControllerManager.getInstance();
-    }
-
-    /**
-     * View管理类
-     * @type {ViewManager}
-     */
-    public static get ViewManager():ViewManager {
-        return ViewManager.getInstance();
-    }
-
-    /**
-     * 场景管理类
-     * @type {SceneManager}
-     */
-    public static get SceneManager():SceneManager {
-        return SceneManager.getInstance();
     }
 
     /**
@@ -271,6 +244,13 @@ class App {
      */
     public static get DragonBonesFactory():DragonBonesFactory {
         return DragonBonesFactory.getInstance();
+    }
+
+    /**
+     * 容器类
+     */
+    public static get GameContainerLayer():GameContainerLayer{
+        return GameContainerLayer.getInstance();
     }
 
     /**

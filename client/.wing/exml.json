@@ -1,0 +1,15 @@
+{
+  "global": {
+    "globalBindingDataTestObj": []
+  },
+  "15ccddd6894": {
+    "bindingDataTestObj": [],
+    "backgroundX": 0,
+    "backgroundY": 0,
+    "backgroundWidth": -1,
+    "backgroundHeight": -1,
+    "useBgImage": true,
+    "useBgColor": true,
+    "backgroundAlpha": 100
+  }
+}
