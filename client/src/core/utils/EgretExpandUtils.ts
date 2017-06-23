@@ -18,6 +18,10 @@ class EgretExpandUtils extends BaseClass {
     }
 
     public removeFromParent(child:egret.DisplayObject):void{
-        child && child.parent && child.parent.removeChild(child);
+        if(child instanceof BaseBoxEuiView){
+            (<BaseBoxEuiView>child).closeBoxAnimation();
+        }else{
+            child && child.parent && child.parent.removeChild(child);
+        }
     }
 }

@@ -98,8 +98,9 @@ class GameContainerLayer extends egret.DisplayObjectContainer {
         return layer;
     }
 
-    public addToContainerByType(view,type,...args):void{
-        var layer = this.getLayerByType(type);
+    public addToContainerByType(view:BaseEuiView,type,...args):void{
+        var layer:egret.DisplayObjectContainer = this.getLayerByType(type);
         layer.addChild(view);
+        view.updateViewByParams.apply(view,args);
     }
 }

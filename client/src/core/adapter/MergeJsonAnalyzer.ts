@@ -4,7 +4,7 @@
  */
 class MergeJsonAnalyzer extends RES.JsonAnalyzer {
     //按名字指定要特殊处理的json数据
-    private mergeJsons:Array<string> = ["MergeConfig_json"];
+    private mergeJsons:Array<string> = ["config_json"];
 
     /**
      * 解析并缓存加载成功的数据

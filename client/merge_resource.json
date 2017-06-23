@@ -1,0 +1,15 @@
+{
+	"groups":[
+		{
+			"keys":"build_json",
+			"name":"config/config.json"
+		}
+	],
+	"resources":[
+		{
+			"name":"build_json",
+			"type":"json",
+			"url":"config/build.json"
+		}
+	]
+}

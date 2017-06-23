@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="HomeBuildListItemSkin" width="400" height="150" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="s9bg_tc2_png" x="0" y="0" scale9Grid="25,25,150,150" anchorOffsetX="0" width="400" anchorOffsetY="0" height="150"/>
+	<e:Label id="nameLabel" text="建筑名字" y="67" horizontalCenter="0"/>
+</e:Skin>

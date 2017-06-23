@@ -1,5 +1,5 @@
 // TypeScript file
-class LoginLayer extends eui.Component{
+class LoginLayer extends BaseEuiView{
     public okBtn:eui.Button;
     constructor(){
         super();

@@ -1,7 +1,11 @@
 // TypeScript file
 class ModuleOpen{
-    public static openHomeScene():any{
-        ModuleOpen.checkToOpen("HomeScene",GameContainerLayer.UI_COMMON_TYPE,1);
+    public static openHomeScene():void{
+        ModuleOpen.checkToOpen("HomeScene",GameContainerLayer.UI_COMMON_TYPE,1,2);
+    }
+
+    public static openBuildLayer():void{
+        ModuleOpen.checkToOpen("HomeBuildLayer",GameContainerLayer.UI_BOX_TYPE);
     }
 
     public static checkToOpen(clsName:string, layer:string = "box", ...args):void {
@@ -62,12 +66,13 @@ class ModuleOpen{
     public static openHandler(clsName:string, layer:string = "box", ...args):any {
         var cls:any = egret.getDefinitionByName(clsName);
         var container = new cls();
-        App.GameContainerLayer.addToContainerByType(container,layer,args);
+        args.splice(0, 0, container, layer);
+        App.GameContainerLayer.addToContainerByType.apply(App.GameContainerLayer,args);
         ModuleOpen.Caches[clsName] = container;
-        // if (container instanceof BaseBoxContainer)
-        // {
-        //     (<BaseBoxContainer> container).showBoxAnimation();
-        // }
+        if (container instanceof BaseBoxEuiView)
+        {
+            (<BaseBoxEuiView>container).showBoxAnimation();
+        }
         return container;
     }
 
