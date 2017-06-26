@@ -23,7 +23,7 @@ class GameContainerLayer extends egret.DisplayObjectContainer {
     private _commonLayer:egret.DisplayObjectContainer;
     private _moduleLayer:egret.DisplayObjectContainer;
 
-    public static notBackJmcNameArr:Array<string> = ["GachaLotteryResultView_jmc"];
+    public static notBackJmcNameArr:Array<string> = [""];
     public static currJmcNameArr:any = [];
     public static moduleItemKey:any={};
     public static IS_SINGLE_BOX:boolean = false;

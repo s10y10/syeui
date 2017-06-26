@@ -5,6 +5,8 @@
 class BaseBoxEuiView extends BaseEuiView {
     protected _boxAnim:IBoxAnimation;
     public closeButton:eui.Button;
+    public BoxLayer:eui.Group;
+    public MaskLayer:eui.Image;
     public constructor(anim:IBoxAnimation = null) {
         super();
         this._boxAnim = anim;
@@ -12,11 +14,14 @@ class BaseBoxEuiView extends BaseEuiView {
 
     protected childrenCreated():void{
         super.childrenCreated();
-        if (this.boxDisplay && this._boxAnim == null) {
+        if (this.BoxLayer && this._boxAnim == null) {
             this._boxAnim = new BoxAnimation();
         }
         if(this.closeButton){
             this.closeButton.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onCloseHandler,this);
+        }
+        if(this.MaskLayer){
+            this.MaskLayer.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onCloseHandler,this);
         }
     }
 
@@ -29,10 +34,13 @@ class BaseBoxEuiView extends BaseEuiView {
         if(this.closeButton){
             this.closeButton.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.onCloseHandler,this);
         }
+        if(this.MaskLayer){
+            this.MaskLayer.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.onCloseHandler,this);
+        }
     }
 
     public get boxDisplay():any {
-        return this["BoxLayer"];
+        return this.BoxLayer;
     }
 
     public showBoxAnimation():void {

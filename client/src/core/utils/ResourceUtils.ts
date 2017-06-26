@@ -168,4 +168,50 @@ class ResourceUtils extends BaseClass {
         this._groups[groupName] = [$onResourceLoadComplete, $onResourceLoadProgress, $onResourceLoadTarget];
         RES.loadGroup(groupName,priority);
     }
+
+
+    /*
+     * huo qu
+     * */
+    public getDBResourceArr(arr, isNew = false): any {
+        if (isNew) {
+            var rArr: any = [];
+            for (var i: number = 0; i < arr.length; i++) {
+                rArr.push(arr[i] + "_skeleton_ani");
+                rArr.push(arr[i] + "_texture_png");
+            }
+            return rArr;
+        }
+        var rArr: any = [];
+        for (var i: number = 0; i < arr.length; i++) {
+            rArr.push(arr[i] + "_skeleton_json");
+            rArr.push(arr[i] + "_texture_json");
+            rArr.push(arr[i] + "_texture_png");
+        }
+        return rArr;
+    }
+
+    /*
+     * 如不能，需要加对应BD加入Res
+     * */
+    public CreateResourceConfigForDB(animationName, path, isNew = false) {
+        var resInst = RES["configInstance"];
+        if (isNew) {
+            if (RES.hasRes(animationName + "_skeleton_ani")) return false;
+            var key1: any = animationName + "_skeleton_ani";
+            var key2: any = animationName + "_texture_png";
+            resInst.addItemToKeyMap({ "name": key1, "type": "bin", "url": path + animationName + "/" + animationName + "_skeleton.ani"});
+            resInst.addItemToKeyMap({ "name": key2, "type": "image", "url": path + animationName + "/" + animationName + "_texture.png"});
+            return true;
+        }
+        if (RES.hasRes(animationName + "_skeleton_json")) return false;
+        var key1: any = animationName + "_skeleton_json";
+        var key2: any = animationName + "_texture_png";
+        var key3: any = animationName + "_texture_json";
+
+        resInst.addItemToKeyMap({ "name": key1, "type": "json", "url": path + animationName + "/" + animationName + "_skeleton.json"});
+        resInst.addItemToKeyMap({ "name": key2, "type": "image", "url": path + animationName + "/" + animationName + "_texture.png"});
+        resInst.addItemToKeyMap({ "name": key3, "type": "json", "url": path + animationName + "/" + animationName + "_texture.json"});
+        return true;
+    }
 }

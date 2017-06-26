@@ -8,7 +8,7 @@
 		<e:Image source="cd_bg_2_png" y="258" x="0"/>
 		<e:Image source="cd_bg_2_png" y="344" x="0"/>
 		<e:Image source="cd_bg_2_png" y="430" x="0"/>
-		<e:Image x="0" y="4" source="menu_turn_png"/>
+		<e:Image id="dbBtn" x="0" y="4" source="menu_turn_png"/>
 		<e:Image id="buildBtn" source="menu_build_png" x="0" y="90"/>
 		<e:Image x="0" y="178" source="menu_map_png"/>
 		<e:Image x="0" y="262" source="menu_shop_png"/>

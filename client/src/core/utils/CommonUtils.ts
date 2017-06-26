@@ -18,6 +18,11 @@ class CommonUtils extends BaseClass {
         lable.stroke = width;
     }
 
+    public newGetTexture(url:string):egret.Texture {
+        var texture:egret.Texture = RES.getRes(url);
+        return texture;
+    }
+
     /**
      * 深度复制
      * @param _data

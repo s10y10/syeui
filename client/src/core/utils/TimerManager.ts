@@ -143,6 +143,8 @@ class TimerManager extends BaseClass {
             var handler:TimerHandler = this._handlers[i];
             if (handler.method == method && handler.methodObj == methodObj) {
                 this._handlers.splice(i, 1);
+                handler.method = handler.methodObj = null;
+				handler.complateMethod = handler.complateMethodObj = null;
                 ObjectPool.push(handler);
                 this._count--;
                 break;
@@ -159,6 +161,8 @@ class TimerManager extends BaseClass {
             var handler:TimerHandler = this._handlers[i];
             if (handler.methodObj == methodObj) {
                 this._handlers.splice(i, 1);
+                handler.method = handler.methodObj = null;
+				handler.complateMethod = handler.complateMethodObj = null;
                 ObjectPool.push(handler);
                 this._count--;
                 i--;

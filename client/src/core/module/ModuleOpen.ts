@@ -1,11 +1,23 @@
 // TypeScript file
 class ModuleOpen{
+    public static openFloatingTipsLayer(msg:any,type:number=0):void{
+        ModuleOpen.checkToOpen("FloatingTipsLayer",GameContainerLayer.UI_TIP_TYPE,msg,type);
+    }
+
     public static openHomeScene():void{
         ModuleOpen.checkToOpen("HomeScene",GameContainerLayer.UI_COMMON_TYPE,1,2);
     }
 
     public static openBuildLayer():void{
         ModuleOpen.checkToOpen("HomeBuildLayer",GameContainerLayer.UI_BOX_TYPE);
+    }
+
+    public static openLoginLayer():void{
+        ModuleOpen.checkToOpen("LoginLayer",GameContainerLayer.UI_COMMON_TYPE);
+    }
+
+    public static openDBLayer():void{
+        ModuleOpen.checkToOpen("HomeDBLayer",GameContainerLayer.UI_BOX_TYPE);
     }
 
     public static checkToOpen(clsName:string, layer:string = "box", ...args):void {

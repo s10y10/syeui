@@ -12,6 +12,9 @@ class LanguageUtils{
         return str;
     }
 
+    public static fn1 = "黑体";
+    public static fn2 ="微软雅黑";
+
     public static langueConfig = {
         "1":"功能未开启",
         "2":"倒计时: %0%  恢复%0%点体力",

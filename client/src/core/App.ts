@@ -254,6 +254,13 @@ class App {
     }
 
     /**
+     * 配置，资源管理类
+     */
+    public static get ResManager():ResManager{
+        return ResManager.getInstance();
+    }
+
+    /**
      * 初始化函数
      * @constructor
      */

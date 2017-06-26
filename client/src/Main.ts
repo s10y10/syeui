@@ -27,6 +27,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
+var gameMain:Main;
 class Main extends eui.UILayer {
     /**
      * 加载进度界面
@@ -35,6 +36,8 @@ class Main extends eui.UILayer {
     private loadingView: LoadingUI;
     protected createChildren(): void {
         super.createChildren();
+
+        gameMain = this;
         //inject the custom material parser
         //注入自定义的素材解析器
         let assetAdapter = new AssetAdapter();
@@ -129,8 +132,7 @@ class Main extends eui.UILayer {
      */
     protected startCreateScene(): void {
         this.addChild(GameContainerLayer.getInstance());
-        var loginLayer:LoginLayer = new LoginLayer();
-        App.GameContainerLayer.addToContainerByType(loginLayer,GameContainerLayer.UI_COMMON_TYPE);
+        ModuleOpen.openLoginLayer();
     }
 }
 
