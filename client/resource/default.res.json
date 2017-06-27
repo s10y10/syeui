@@ -278,6 +278,16 @@
 			"name":"btn_wdgz2_png",
 			"type":"image",
 			"url":"assets/btn_wdgz2.png"
+		},
+		{
+			"name":"btn_qx_png",
+			"type":"image",
+			"url":"assets/otherimg/btn_qx.png"
+		},
+		{
+			"name":"btn_qd1_png",
+			"type":"image",
+			"url":"assets/otherimg/btn_qd1.png"
 		}
 	]
 }

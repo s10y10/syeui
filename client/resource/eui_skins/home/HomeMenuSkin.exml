@@ -11,7 +11,7 @@
 		<e:Image id="dbBtn" x="0" y="4" source="menu_turn_png"/>
 		<e:Image id="buildBtn" source="menu_build_png" x="0" y="90"/>
 		<e:Image x="0" y="178" source="menu_map_png"/>
-		<e:Image x="0" y="262" source="menu_shop_png"/>
+		<e:Image id="confirmBtn" x="0" y="262" source="menu_shop_png"/>
 		<e:Image x="0" y="356" source="btn_yqhy2_png"/>
 		<e:Image x="0" y="437" source="btn_rz_png"/>
 	</e:Group>

@@ -30,6 +30,7 @@
     "resource/eui_skins/ToggleSwitchSkin.exml",
     "resource/eui_skins/VScrollBarSkin.exml",
     "resource/eui_skins/VSliderSkin.exml",
+    "resource/eui_skins/common/ConfirmLayerSkin.exml",
     "resource/eui_skins/common/FloatingTipsLayerSkin.exml",
     "resource/eui_skins/home/HomeBuildLayerSkin.exml",
     "resource/eui_skins/home/HomeBuildListItemSkin.exml",

@@ -10,7 +10,7 @@ class DateUtils extends BaseClass {
     /**
      * 根据秒数格式化字符串
      * @param second 秒数
-     * @param type 1:00:00:00   2:yyyy-mm-dd h:m:s    3:00:00   4:xx天前，xx小时前，xx分钟前
+     * @param type 1:00:00:00   2:yyyy-mm-dd h:m:s    3:00:00   4:xx天前，xx小时前，xx分钟前  5:xx天，xx小时，xx分钟,xx秒
      * @return
      *
      */
