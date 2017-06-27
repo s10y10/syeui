@@ -261,6 +261,20 @@ class App {
     }
 
     /**
+     * 家控制
+     */
+    public static get HomeController():HomeController{
+        return HomeController.getInstance();
+    }
+
+    /**
+     * 地图控制
+     */
+    public static get MapController():MapController{
+        return MapController.getInstance();
+    }
+
+    /**
      * 初始化函数
      * @constructor
      */

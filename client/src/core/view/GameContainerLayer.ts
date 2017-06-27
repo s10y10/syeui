@@ -1,11 +1,6 @@
 /**
  * Created by edward on 14-8-11.
  */
-class BoxOptions {
-    public static DONT_INSERT_HISTORY:string = "##DONT_INSERT_HISTORY##";
-    public static CONCAT_PARAMS:string = "##CONCAT_PARAMS##";
-}
-
 class GameContainerLayer extends egret.DisplayObjectContainer {
 
     public static UI_TIP_TYPE:string = "tip";
@@ -22,16 +17,6 @@ class GameContainerLayer extends egret.DisplayObjectContainer {
     private _boxLayer:egret.DisplayObjectContainer;
     private _commonLayer:egret.DisplayObjectContainer;
     private _moduleLayer:egret.DisplayObjectContainer;
-
-    public static notBackJmcNameArr:Array<string> = [""];
-    public static currJmcNameArr:any = [];
-    public static moduleItemKey:any={};
-    public static IS_SINGLE_BOX:boolean = false;
-
-    public _history:Array<any> = [];
-
-    public _boxHistory:Array<any> = [];
-
     constructor() {
         super();
     }

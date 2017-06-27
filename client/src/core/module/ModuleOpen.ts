@@ -4,6 +4,9 @@ class ModuleOpen{
         ModuleOpen.checkToOpen("ConfirmLayer",GameContainerLayer.UI_TOP_BOX_TYPE,cf,cb,data);
     }
 
+    public static openMapScene():void{
+        ModuleOpen.checkToOpen("MapScene",GameContainerLayer.UI_COMMON_TYPE);
+    }
 
     public static openFloatingTipsLayer(msg:any,type:number=0):void{
         ModuleOpen.checkToOpen("FloatingTipsLayer",GameContainerLayer.UI_TIP_TYPE,msg,type);

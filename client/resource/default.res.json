@@ -1,8 +1,14 @@
 {
-	"groups":[{
-			"keys":"checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,config_json",
+	"groups":[
+		{
+			"keys":"checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,config_json,zhuanchang_skeleton_ani,zhuanchang_skeleton_json,zhuanchang_texture_json,zhuanchang_texture_png",
 			"name":"preload"
-		}],
+		},
+		{
+			"keys":"mapbg_jpg",
+			"name":"map"
+		}
+	],
 	"resources":[
 		{
 			"name":"checkbox_select_disabled_png",
@@ -288,6 +294,31 @@
 			"name":"btn_qd1_png",
 			"type":"image",
 			"url":"assets/otherimg/btn_qd1.png"
+		},
+		{
+			"name":"zhuanchang_skeleton_ani",
+			"type":"bin",
+			"url":"animation/other/zhuanchang/zhuanchang_skeleton.ani"
+		},
+		{
+			"name":"zhuanchang_skeleton_json",
+			"type":"json",
+			"url":"animation/other/zhuanchang/zhuanchang_skeleton.json"
+		},
+		{
+			"name":"zhuanchang_texture_json",
+			"type":"json",
+			"url":"animation/other/zhuanchang/zhuanchang_texture.json"
+		},
+		{
+			"name":"zhuanchang_texture_png",
+			"type":"image",
+			"url":"animation/other/zhuanchang/zhuanchang_texture.png"
+		},
+		{
+			"name":"mapbg_jpg",
+			"type":"image",
+			"url":"assets/mapbg.jpg"
 		}
 	]
 }

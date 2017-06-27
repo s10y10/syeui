@@ -11,13 +11,6 @@ class StageUtils extends BaseClass {
      */
     public constructor() {
         super();
-
-        if (StageUtils._uiStage == null) {
-            StageUtils._uiStage = new eui.UILayer();
-            StageUtils._uiStage.percentHeight = 100;
-            StageUtils._uiStage.percentWidth = 100;
-            this.getStage().addChild(StageUtils._uiStage);
-        }
     }
 
     /**
@@ -82,13 +75,5 @@ class StageUtils extends BaseClass {
      */
     public getStage():egret.Stage {
         return egret.MainContext.instance.stage;
-    }
-
-    /**
-     * 获取唯一UIStage
-     * @returns {eui.UILayer}
-     */
-    public getUIStage():eui.UILayer {
-        return StageUtils._uiStage;
     }
 }

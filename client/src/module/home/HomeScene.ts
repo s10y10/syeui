@@ -12,5 +12,6 @@ class HomeScene extends BaseEuiView{
 
     public childrenCreated():void{
         super.childrenCreated();
+        App.HomeController.setHomeScene(this);
     }
 }

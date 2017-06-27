@@ -132,7 +132,18 @@ class Main extends eui.UILayer {
      */
     protected startCreateScene(): void {
         this.addChild(GameContainerLayer.getInstance());
+        this.initChangeSceneAnim();
         ModuleOpen.openLoginLayer();
+    }
+
+    private initChangeSceneAnim():void{
+        //场景切换动画
+        var animation = App.DragonBonesFactory.makeFastArmature("zhuanchang", "zhuanchang", 1);
+        animation.autoDestroy = false;
+        animation.x = App.StageUtils.getWidth() * 0.5;
+        animation.y = App.StageUtils.getHeight() * 0.5;
+        var container = App.GameContainerLayer.getLayerByType(GameContainerLayer.UI_TOOLTIP_TYPE);
+        SceneAnimationManager.init(animation, container, "1", "2");
     }
 }
 

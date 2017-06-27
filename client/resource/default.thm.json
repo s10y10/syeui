@@ -36,6 +36,7 @@
     "resource/eui_skins/home/HomeBuildListItemSkin.exml",
     "resource/eui_skins/home/HomeDBLayerSkin.exml",
     "resource/eui_skins/home/HomeMenuSkin.exml",
-    "resource/eui_skins/home/HomeSceneSkin.exml"
+    "resource/eui_skins/home/HomeSceneSkin.exml",
+    "resource/eui_skins/map/MapSceneSkin.exml"
   ]
 }
