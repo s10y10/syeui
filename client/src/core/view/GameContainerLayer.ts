@@ -1,7 +1,7 @@
 /**
  * Created by edward on 14-8-11.
  */
-class GameContainerLayer extends egret.DisplayObjectContainer {
+class GameContainerLayer extends eui.UILayer {
 
     public static UI_TIP_TYPE:string = "tip";
     public static UI_GUIDE_TYPE:string = "guide";
@@ -31,6 +31,8 @@ class GameContainerLayer extends egret.DisplayObjectContainer {
     }
 
     private init():void {
+        this.percentWidth = 100;
+        this.percentHeight = 100;
         this._commonLayer = this.createContainer("common");
         this._moduleLayer = this.createContainer("modulebox");
         this._boxLayer = this.createContainer("box");
@@ -40,10 +42,11 @@ class GameContainerLayer extends egret.DisplayObjectContainer {
         this._tipLayer = this.createContainer("tip");
     }
 
-    private createContainer(name:string = null):egret.DisplayObjectContainer {
-        var ret:egret.DisplayObjectContainer = new egret.DisplayObjectContainer();
-        ret.width = 0;
-        ret.height = 0;
+    private createContainer(name:string = null):eui.UILayer {
+        var ret:eui.UILayer = new eui.UILayer();
+        ret.touchEnabled = false;
+        ret.percentHeight = 100;
+        ret.percentWidth = 100;
         this.addChild(ret);
         if (name != null) {
             ret.name = name;

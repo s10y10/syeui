@@ -3,9 +3,6 @@
  * Stage相关工具类
  */
 class StageUtils extends BaseClass {
-    //UIStage单例
-    private static _uiStage:eui.UILayer;
-
     /**
      * 构造函数
      */
@@ -75,5 +72,5 @@ class StageUtils extends BaseClass {
      */
     public getStage():egret.Stage {
         return egret.MainContext.instance.stage;
-    }
+    }//
 }

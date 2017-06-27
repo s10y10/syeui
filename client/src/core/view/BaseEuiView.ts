@@ -5,6 +5,7 @@
 class BaseEuiView extends eui.Component {
     private _isDisposed:boolean = false;
     private _forceDispose:boolean = true;
+    public scaleGroup:eui.Group;
     public constructor() {
         super();
         this.percentHeight = 100;
@@ -18,10 +19,13 @@ class BaseEuiView extends eui.Component {
 
     protected childrenCreated():void{
         super.childrenCreated();
+        this.addEventListener(egret.Event.RESIZE,this.onResizeHandler,this);
     }
 
-    private removeRemovedFromStage(){
-        this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this._base_onRemovedHandler, this);
+    private onResizeHandler(e:Event=null):void{
+        if(this.scaleGroup){
+            this.scaleGroup.scaleX = this.scaleGroup.scaleY = App.StageUtils.getHeight() /1136;
+        }
     }
 
     /**
@@ -37,7 +41,8 @@ class BaseEuiView extends eui.Component {
     public dispose():void {
         if (this._forceDispose) {
             this._isDisposed = true;
-            this.removeRemovedFromStage();
+            this.removeEventListener(egret.Event.RESIZE,this.onResizeHandler,this);
+            this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this._base_onRemovedHandler, this);
             removeEventsByTarget(this);
             egret.Tween.removeTweens(this);
             ModuleOpen.clearCache(egret.getQualifiedClassName(this));

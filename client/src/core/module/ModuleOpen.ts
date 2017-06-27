@@ -105,6 +105,7 @@ class ClassConfig {
     //页面需要的资源组
     public static Groups = {
         "HomeScene1":["home"],
+        "MapScene":["map"],
     };
 
     //页面需要请求的后端接口
