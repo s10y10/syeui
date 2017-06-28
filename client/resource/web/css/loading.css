@@ -1,0 +1,82 @@
+.logo {
+    width: 144px;
+    height: 144px;
+    background-image: url(../res/logo.png);
+}
+
+.title {
+    width: 301px;
+    height: 59px;
+    background-image: url(../res/title.png);
+}
+
+.star {
+    width: 27px;
+    height: 25px;
+    background-image: url(../res/star.png);
+}
+
+.loadingbar {
+    width: 366px;
+    height: 7px;
+    border-radius: 8px;
+    background-color: #8c8c8c;
+}
+
+.loadingfill {
+    height: 100%;
+    border-radius: 8px;
+    background-color: #ffc028;
+}
+
+.ma {
+    margin: auto;
+}
+
+.ib {
+    display: inline-block;
+}
+
+.fullw {
+    width: 100%;
+}
+
+.tc {
+    text-align: center;
+}
+
+.fs22px {
+    font-size: 22px;
+}
+
+.rotateC {
+    -webkit-animation: rotateC 20s linear infinite;
+}
+
+.rotateCf {
+    -webkit-animation: rotateC 2s linear infinite;
+}
+
+@-webkit-keyframes rotateC {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.tavernchangeitem {
+    margin: 10px 21px;
+}
+
+.pr {
+    position: relative;
+}
+
+.pa {
+    position: absolute;
+}

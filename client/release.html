@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Egret</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <link href="resource/web/css/loading.css" rel="stylesheet" type="text/css" />
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+
+<div id="rotate_screen" style="z-index:3;display:none">
+    <img id="rotate_screen_img" src="resource/web/rotateBg.png" style="position: fixed;left: 0px;top: 0px"/>
+</div>
+
+<div class='fullw tc pa' id='loadingUi' style='z-index:2;width:640px;height:1136px;transform-origin:0px 0px;-webkit-transform-origin:0px 0px;display:none;'>
+    <div id='gameLogo' class='ma logo pr' style='margin-top:214px;'></div>
+    <div style='margin:60px auto 170px auto;margin-bottom: 250px' class='tc pr'>
+    </div>
+    <div class='tc fullw' >
+        <div class="fs22px tc pr" style='color:#808080;margin-bottom:35px;'>首次加载时间稍长，请耐心等待...</div>
+        <div class='ma loadingbar pr' >
+            <div class='loadingfill' id='loadingBar'>
+            </div>
+        </div>
+    </div>
+</div>
+</head>
+<body>
+
+    <div id="gameDiv" style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="auto"
+         data-scale-mode="fixedWidth"
+         data-frame-rate="30"
+         data-content-width="640"
+         data-content-height="1136"
+         data-show-paint-rect="false"
+         data-multi-fingered="2"
+         data-show-fps="false" data-show-log="false"
+         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    </div>
+    <script>
+        var game_preload_list = [
+            "libs/modules/egret/egret.min.js",
+            "libs/modules/egret/egret.web.min.js",
+            "libs/modules/game/game.min.js",
+            "libs/modules/tween/tween.min.js",
+            "libs/modules/res/res.min.js",
+            "libs/modules/socket/socket.min.js",
+            "libs/modules/eui/eui.min.js",
+            "polyfill/promise.min.js",
+            "main.min.js"];
+        if(!window)
+        var window = {};
+
+        window.scrollTo(0, 1);
+        var loadingUi = document.getElementById('loadingUi');
+        var lbar = document.getElementById('loadingBar');
+        var loadingInterID = 0;
+        var loadpercent = 0;
+        lbar.style.width = "0%";
+        var uiWidth = 640;
+        var uiHeight = 1136;
+        var loadFlag = false;
+        function showPro(pronum){
+            loadpercent = pronum;
+            lbar.style.width = loadpercent+"%";
+            if(pronum == 100){
+                removeLoading();
+            }
+        }
+        function removeLoading(){
+            clearInterval(loadingInterID);
+            loadingUi.parentNode.removeChild(loadingUi);
+        }
+
+        egret_h5 = {};
+        egret_h5.prefix = "";
+        egret_h5.loadScript = function (list, callback, proCallBack) {
+            var loaded = 0;
+            var loadNext = function () {
+                egret_h5.loadSingleScript(egret_h5.prefix + list[loaded], function () {
+                    loaded++;
+                    if (loaded >= list.length) {
+                        callback();
+                    }
+                    else {
+                        if(proCallBack){
+                            proCallBack(loaded);
+                        }
+                        loadNext();
+                    }
+                })
+            };
+            loadNext();
+        };
+
+        egret_h5.loadSingleScript = function (src, callback) {
+            var s = document.createElement('script');
+            if (s.hasOwnProperty("async")) {
+                s.async = false;
+            }
+            s.src = src;
+            s.addEventListener('load', function () {
+                this.removeEventListener('load', arguments.callee, false);
+                callback();
+            }, false);
+            document.body.appendChild(s);
+        };
+
+        var loadFlag;
+        function loadCodeAndRes(){
+            if(!loadFlag){
+                loadFlag = true;
+                    egret_h5.loadScript(game_preload_list,
+                            function (){
+                                /**
+                                 * {
+                                 * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+                                 * "audioType": "" //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+                                 * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
+                                 * }
+                                 **/
+                                showPro(100);
+                                egret.runEgret({renderMode:"webgl", audioType:0});
+                            },
+                            function (pro){
+                                showPro((1+pro)/(1+game_preload_list.length)*100);
+                            }
+                    );
+            }
+        }
+        setTimeout(function(){
+            var _scaleY = Math.min(window.innerWidth / uiWidth, 1);
+            var _scaleX = _scaleY;
+            var _topY = (window.innerHeight - uiHeight*_scaleY) / 2;
+            var _leftX = (window.innerWidth - uiWidth*_scaleX) / 2;
+            loadingUi.style.width = uiWidth;
+            loadingUi.style.height = uiHeight;
+            loadingUi.style.border = 'none';
+            loadingUi.style.left = _leftX+'px';
+            loadingUi.style.top = _topY+'px';
+            loadingUi.style.webkitTransform = 'scale('+_scaleX+','+_scaleY+')';
+            loadingUi.style.display = 'block';
+            loadingInterID = setInterval(loadCodeAndRes, 200);
+        },100);
+
+        function checkRotation(){
+            var div = document.getElementById("rotate_screen");
+            var gameDiv = document.getElementById("gameDiv");
+            document.getElementById("rotate_screen_img").style.width = "100%";
+            document.getElementById("rotate_screen_img").style.height = "100%";
+            if(window.orientation == 90 || window.orientation == -90)
+            {
+                div.style.display = "block";
+                gameDiv.style.display = "none";
+            }
+            else {
+                div.style.display = "none";
+                gameDiv.style.display = "block";
+            }
+        }
+        checkRotation();
+        window.onorientationchange = checkRotation;
+    </script>
+</body>
+</html>
