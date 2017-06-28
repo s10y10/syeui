@@ -25,6 +25,7 @@ class BaseEuiView extends eui.Component {
     private onResizeHandler(e:Event=null):void{
         if(this.scaleGroup){
             this.scaleGroup.scaleX = this.scaleGroup.scaleY = App.StageUtils.getHeight() /1136;
+            this.scaleGroup.touchEnabled = false;
         }
     }
 

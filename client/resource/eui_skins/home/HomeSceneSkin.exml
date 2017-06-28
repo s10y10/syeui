@@ -4,7 +4,7 @@
 		<e:Image source="homebg_jpg" x="0" scaleX="1" scaleY="1" top="0"/>
 		<ns1:HomeMenu skinName="HomeMenuSkin" scaleX="1" scaleY="1" top="0" left="0"/>
 		<e:Group id="scaleGroup" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="0">
-			<e:Image source="islandBg1_png" scaleX="1" scaleY="1" x="0" y="0"/>
+			<e:Image id="img" source="islandBg1_png" scaleX="1" scaleY="1" x="0" y="0"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

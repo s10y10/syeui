@@ -21,7 +21,7 @@ class ModuleOpen{
     }
 
     public static openLoginLayer():void{
-        ModuleOpen.checkToOpen("LoginLayer",GameContainerLayer.UI_COMMON_TYPE);
+        ModuleOpen.checkToOpen("LoginLayer",GameContainerLayer.UI_MODULE_TYPE);
     }
 
     public static openDBLayer():void{

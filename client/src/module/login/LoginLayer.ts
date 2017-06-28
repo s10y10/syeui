@@ -54,12 +54,6 @@ class LoginLayer extends BaseEuiView{
     }
 
     private onGetUserInfoSuccess(data:any):void{
-        this.enterHomeScene();
-    }
-
-    private enterHomeScene():void{
-        App.EgretExpandUtils.removeFromParent(this);
-        App.HomeController;
-        doAction(HomeEvent.enterHomeScene);
+        gameMain.loadGameRes();
     }
 }

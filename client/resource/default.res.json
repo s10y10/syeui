@@ -1,12 +1,20 @@
 {
 	"groups":[
 		{
-			"keys":"checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,config_json,zhuanchang_skeleton_ani,zhuanchang_skeleton_json,zhuanchang_texture_json,zhuanchang_texture_png,islandBg1_png",
+			"keys":"checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,config_json,islandBg1_png,btn_qd_png",
 			"name":"preload"
 		},
 		{
 			"keys":"mapbg_jpg",
 			"name":"map"
+		},
+		{
+			"keys":"bg_jpg,jdk_png,jdt_png",
+			"name":"loading"
+		},
+		{
+			"keys":"zhuanchang_skeleton_ani,zhuanchang_skeleton_json,zhuanchang_texture_json,zhuanchang_texture_png,btn_gzwd1_png,btn_gzwd2_png,btn_wdgz1_png,btn_wdgz2_png,btn_qx_png,btn_qd1_png,btn_jy_png,btn_rz_png,btn_sz_png,btn_yqhy2_png,homebg_jpg,menu_build_png,menu_map_png,menu_set_png,menu_shop_png,menu_turn_png,cd_png,cd_bg_1_png,cd_bg_2_png,cd_bg_3_png,cd_sz_bg_1_png,cd_sz_bg_2_png,dp2_1_png,zjm_bg_3_png,zjm_xx_bg3_png,zjm_xx_bg4_png,zjm_xx_bg_2_png,black1_png,close2_png,s9bg_tc1_png,s9bg_tc2_png",
+			"name":"pregame"
 		}
 	],
 	"resources":[
@@ -324,6 +332,16 @@
 			"name":"islandBg1_png",
 			"type":"image",
 			"url":"assets/islandBg1.png"
+		},
+		{
+			"name":"jdk_png",
+			"type":"image",
+			"url":"assets/loading/jdk.png"
+		},
+		{
+			"name":"jdt_png",
+			"type":"image",
+			"url":"assets/loading/jdt.png"
 		}
 	]
 }

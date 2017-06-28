@@ -87,8 +87,13 @@ class GameContainerLayer extends eui.UILayer {
     }
 
     public addToContainerByType(view:BaseEuiView,type,...args):void{
-        var layer:egret.DisplayObjectContainer = this.getLayerByType(type);
+        var layer:eui.UILayer = this.getLayerByType(type);
         layer.addChild(view);
         view.updateViewByParams.apply(view,args);
+    }
+
+    public cleanLayer(type) {
+        var layer:eui.UILayer = this.getLayerByType(type);
+        layer.removeChildren();        
     }
 }
