@@ -119,8 +119,8 @@ class Proxy extends egret.EventDispatcher {
 
     private loadHandler() {
         if(!this._requestUrl){
-            //this._requestUrl = "http://10.0.11.98:43000/api";
-            this._requestUrl = "http://dev-games.egret-labs.org:43000/api";
+            // this._requestUrl = "http://dev-games.egret-labs.org:43000/api";
+            this._requestUrl = "http://10.0.7.218:8080/api";
         }
 
         var url: string = this._requestUrl.indexOf("?") == -1 ? this._requestUrl + "?" : this._requestUrl;
